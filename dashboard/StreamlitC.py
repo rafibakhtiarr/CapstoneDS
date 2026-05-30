@@ -37,7 +37,7 @@ def cek_recycle(generalname, category):
 # --- 3. LOAD & PROCESS DATA ---
 @st.cache_data
 def load_data():
-    data = pd.read_csv("D:/FILE VSCODE/Capstone/Data_Sampah.csv")
+    data = pd.read_csv("dashboard/Data_Sampah.csv")
     data['Recyclability'] = data.apply(lambda row: cek_recycle(row['generalname'], row['category']), axis=1)
     data['Hardness'] = data.apply(lambda row: cek_hardness(row['generalname'], row['category']), axis=1)
     
